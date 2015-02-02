@@ -24,6 +24,8 @@
 
 @import "reset";
 
+
+
 // ==========================================================================
 //  1. Icons - Sets up the icon font and respective classes
 // ==========================================================================
@@ -1846,6 +1848,9 @@ table.plain {
 //  below this point, or it will probably fuck everything up.
 // ==========================================================================
 
+ol.linenums li {
+  list-style-type: decimal;
+}
 
 
 

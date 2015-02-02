@@ -21,7 +21,7 @@
     scrollbarPos = scrollbarPos + ($(window).height() * 0.38);
     return specialFloor( scrollbarPos );
   }
-  
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Header
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@
       $('.post-title, .menu-title').removeAttr('style');
       return;
     }
-    
+
     // Header Height Calculation
 
     var pageHeaderHeight = $('#site-head').outerHeight();
@@ -105,7 +105,7 @@
 
         var minPostOpacity = 0.2;
 
-        // END SETTINGS 
+        // END SETTINGS
 
         var titleHeight = specialFloor( $(this).outerHeight() );
         var pageHeaderHeight = specialFloor( $('header#site-head').outerHeight() );
@@ -154,7 +154,7 @@
           titleWrapper.css('visibility', 'hidden');
           $(this).parents('.post:first').css('opacity', minPostOpacity);
         }
-                
+
         $(this).parent().css('marginTop', _marginTop);
       });
     }).scroll();
@@ -208,7 +208,7 @@
     ///////////////////////
     // Go Down
 
-  
+
     $('.next-post').click(function(){
       var moveToPostIndex;
       moveToPostIndex = findActualPostIndex() + 1;
@@ -221,9 +221,9 @@
     });
 
     $(document).keydown(function(e){
-  
+
       if( ( $('.jqres').width() <= 900 ) ) ;
-  
+
       if( 34 == e.keyCode ){
         // Page Down
         $('.next-post').click();
@@ -234,7 +234,7 @@
     $('.next-post').mouseover(function(){
       var actualPostIndex = findActualPostIndex() + 1;
       var others;
-      
+
       others = $('.cat-nav-post').not( '.cat-nav-post:eq(' + actualPostIndex + ')' );
       others.removeClass('come-from-bottom');
       others.removeClass('come-from-top');
@@ -268,9 +268,9 @@
     });
 
     $(document).keydown(function(e){
-  
+
       if( ( $('.jqres').width() <= 900 ) ) ;
-  
+
       if( 33 == e.keyCode ){
         // Page Up
         $('.prev-post').click();
@@ -281,7 +281,7 @@
     $('.prev-post').mouseover(function(){
       var actualPostIndex = findActualPostIndex() - 1;
       var others;
-      
+
       if( 0 > actualPostIndex ){
         actualPostIndex = 9999999;
       }
@@ -307,7 +307,7 @@
       }else{
         $('.prev-post').show();
       }
-      
+
       if( $('.post').size() - 1 <= actualPostIndex ){
         $('.next-post').hide();
       }else{
@@ -317,8 +317,10 @@
       $('.prev-post:hover').mouseover();
       $('.next-post:hover').mouseover();
     });
-  
+
   }
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Initialization
@@ -344,6 +346,35 @@
 
     $(window).resize();
     $(window).scroll();
+
+    hljs.initHighlightingOnLoad();
+
+    $(function() {
+      $('.article_container').each(function() {
+
+        var text = $(this).text()
+        //split text by spaces to define total words
+        var totalWords = text.trim().split(/\s+/g).length;
+        //define words per second based on words per minute (wordsPerMinute)
+        var wordsPerSecond = 270 / 60; // = 4.5
+        //define total reading time in seconds
+        var totalReadingTimeSeconds = totalWords / wordsPerSecond;
+        var readingTimeMinutes = Math.round(totalReadingTimeSeconds / 60);
+
+        //if minutes are greater than 0
+        if(readingTimeMinutes > 0) {
+          //set reading time by the minute
+          $(this).find('.eta').text(readingTimeMinutes + ' min');
+        } else {
+          $(this).find('.eta').text('under 1 min');
+        }
+
+        //set word count
+        $(this).find('.post-word-count').text(totalWords);
+
+      });
+    });
+
   });
 
 }(jQuery));

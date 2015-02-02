@@ -14,14 +14,14 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=0.77, user-scalable=no" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v1.0" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/railscasts.min.css">
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/github.min.css">
 
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -122,37 +122,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/all.js"></script>
     <script src="http://yandex.st/highlightjs/7.4/highlight.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-      hljs.initHighlightingOnLoad();
-
-      $(function() {
-        $('.article_container').each(function() {
-
-          var text = $(this).text()
-          //split text by spaces to define total words
-          var totalWords = text.trim().split(/\s+/g).length;
-          //define words per second based on words per minute (wordsPerMinute)
-          var wordsPerSecond = 270 / 60; // = 4.5
-          //define total reading time in seconds
-          var totalReadingTimeSeconds = totalWords / wordsPerSecond;
-          var readingTimeMinutes = Math.round(totalReadingTimeSeconds / 60);
-
-          //if minutes are greater than 0
-          if(readingTimeMinutes > 0) {
-            //set reading time by the minute
-            $(this).find('.eta').text(readingTimeMinutes + ' min');
-          } else {
-            $(this).find('.eta').text('under 1 min');
-          }
-
-          //set word count
-          $(this).find('.post-word-count').text(totalWords);
-
-        });
-      });
-
-    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
