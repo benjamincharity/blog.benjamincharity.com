@@ -347,33 +347,6 @@
     $(window).resize();
     $(window).scroll();
 
-    hljs.initHighlightingOnLoad();
-
-    $(function() {
-      $('.article_container').each(function() {
-
-        var text = $(this).text()
-        //split text by spaces to define total words
-        var totalWords = text.trim().split(/\s+/g).length;
-        //define words per second based on words per minute (wordsPerMinute)
-        var wordsPerSecond = 270 / 60; // = 4.5
-        //define total reading time in seconds
-        var totalReadingTimeSeconds = totalWords / wordsPerSecond;
-        var readingTimeMinutes = Math.round(totalReadingTimeSeconds / 60);
-
-        //if minutes are greater than 0
-        if(readingTimeMinutes > 0) {
-          //set reading time by the minute
-          $(this).find('.eta').text(readingTimeMinutes + ' min');
-        } else {
-          $(this).find('.eta').text('under 1 min');
-        }
-
-        //set word count
-        $(this).find('.post-word-count').text(totalWords);
-
-      });
-    });
 
   });
 
