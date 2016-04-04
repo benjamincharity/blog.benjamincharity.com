@@ -6,7 +6,10 @@ Theme for my ghost blog.
 
 ### Local Development
 
+    # in blog.benjamincharity.com
     $ npm start
+
+    # in blog.benjamincharity.com/content/themes/benjamincharity
     $ compass watch .
 
 ### Build JS
