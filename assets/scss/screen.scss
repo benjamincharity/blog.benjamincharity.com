@@ -22,7 +22,6 @@
 //
 
 @import 'compass';
-
 @import 'reset';
 
 
@@ -146,13 +145,13 @@ body {
 
 ::-moz-selection {
   color: #fff;
-  background: #222;
+  background: #ef4651;
   text-shadow: none;
 }
 
 ::selection {
   color: #fff;
-  background: #222;
+  background: #ef4651;
   text-shadow: none;
 }
 
@@ -231,7 +230,7 @@ ol ol,
 ul ul,
 ul ol,
 ol ul {
-  margin: 0.4em 0;
+  margin: .4em 0;
 }
 
 hr {
@@ -321,7 +320,6 @@ p code {
 code .at_rule {
   white-space: nowrap;
 }
-
 
 //pre {
 //-moz-box-sizing: border-box;
@@ -1309,6 +1307,14 @@ table.plain {
   display: block;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.post-content ol li {
+  list-style-type: number;
+}
+
+.post-content ol ul {
+  padding-left: 40px;
 }
 
 .post-template .table-of-contents  {
