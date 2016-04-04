@@ -3,8 +3,14 @@
  */
 
 (function ($) {
-
   "use strict";
+
+  $(document).ready(function() {
+      // Pagination replace text with icons
+      $('.newer-posts').empty().addClass('fa fa-angle-left');
+      $('.older-posts').empty().addClass('fa fa-angle-right');
+  });
+
 
   function specialFloor( number ){
     var fraction = 100;
@@ -89,7 +95,9 @@
         return;
       }
 
-      var bgHeight = specialFloor( $('#site-bg-image').height() );
+      /*
+       *var bgHeight = specialFloor( $('#site-bg-image').height() );
+       */
       var posToFade = 0;
       $('.post-title').each(function(){
         var this_posToFade = specialFloor( $(this).outerHeight() + ($('.content').width()*0.2) );
@@ -321,7 +329,6 @@
   }
 
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Initialization
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -351,9 +358,3 @@
   });
 
 }(jQuery));
-
-
-
-
-
-
