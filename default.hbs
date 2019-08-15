@@ -37,14 +37,8 @@
     </div>
 
 
-    {{#if @blog.cover}}
-    <!--<div style="overflow:hidden; left:10px; height:0; width:0;">-->
-        <!--<img crossorigin="anonymous" id="site-bg-image" alt="background" src="{{@blog.cover}}">-->
-    <!--</div>-->
-    <div id="ccontainer" data-bg="{{#if @blog.cover}}{{@blog.cover}}{{/if}}">
-        <!--<div id="cholder">-->
-            <!--<canvas id="canvas"></canvas>-->
-        <!--</div>-->
+    {{#if @site.cover_image}}
+    <div id="ccontainer" data-bg="{{#if @site.cover_image}}{{@site.cover_image}}{{/if}}">
         <div id="choverbg"></div>
     </div>
     {{/if}}
